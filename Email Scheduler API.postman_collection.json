@@ -1,0 +1,144 @@
+{
+	"info": {
+		"_postman_id": "19a10de4-8e36-44c4-9eac-0c206fa442d7",
+		"name": "Email Scheduler API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Schedule Email",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"to\": \"recipient@example.com\",\n\t\"subject\": \"Test Email\",\n\t\"body\": \"Hello, this is a test email\",\n\t\"scheduledTime\": \"2023-12-31T12:00:00Z\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/schedule-email",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"schedule-email"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List All Emails",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/list-emails",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"list-emails"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reschedule Email",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"scheduledTime\": \"2023-12-31T15:00:00Z\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/reschedule-email/{emailId}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"reschedule-email",
+						"{emailId}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Email",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/delete-email/{emailId}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"delete-email",
+						"{emailId}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Failed Emails",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/failed-emails",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"failed-emails"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

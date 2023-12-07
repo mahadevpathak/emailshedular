@@ -12,7 +12,7 @@ const emailController = {
 
       res.status(201).json({ message: 'Email scheduled successfully', email });
 
-      // Uncomment the following line to actually send the email
+      
       // sendEmail(email);
     } catch (error) {
       console.error(error);

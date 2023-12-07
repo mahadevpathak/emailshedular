@@ -56,12 +56,12 @@ const emailController = {
   },
 };
 
-// Function to send email using SendGrid
+
 const sendEmail = async (email) => {
   try {
     const msg = {
       to: email.to,
-      from: 'your-email@example.com', // Replace with your email
+      from: 'mayur.pathak1545@gmail.com', 
       subject: email.subject,
       text: email.body,
     };
